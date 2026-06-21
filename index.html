@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Lamya ❤️ Shan | Animated Wedding Invitation</title>
+  <!-- Elegant serif & clean sans-serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fefaf5;
+      color: #2e2a28;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* glassmorphism card */
+    .glass-card {
+      background: rgba(255, 250, 240, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 235, 215, 0.5);
+      border-radius: 36px;
+      box-shadow: 0 25px 40px -12px rgba(210, 150, 140, 0.2), 0 4px 18px rgba(255, 215, 195, 0.15);
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
+    }
+
+    /* parallax floral backgrounds */
+    .floral-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .floating-flower {
+      position: absolute;
+      opacity: 0.5;
+      background-size: contain;
+      background-repeat: no-repeat;
+      filter: drop-shadow(0 8px 12px rgba(240, 180, 160, 0.2));
+      will-change: transform;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+    }
+
+    section {
+      position: relative;
+      padding: 5rem 0;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 2rem;
+    }
+
+    /* ===== FIXED: Lamya on 1st row, heart on 2nd, Shan on 3rd (perfect on mobile) ===== */
+    .couple-stacked {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      margin-bottom: 1.2rem;
+    }
+    .couple-name-top {
+      font-size: clamp(3.5rem, 14vw, 6rem);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: #4a2e2a;
+      text-shadow: 0 4px 20px rgba(255, 215, 200, 0.6);
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #6e4a3f 0%, #a55e4e 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+    }
+    .couple-heart {
+      font-size: clamp(2.4rem, 8vw, 3.2rem);
+      color: #e07c7c;
+      display: inline-block;
+      filter: drop-shadow(0 4px 12px #fad1c4);
+      margin: 0.2rem 0;
+      animation: gentleBeatHeart 2s infinite ease-in-out;
+    }
+    .couple-name-bottom {
+      font-size: clamp(3.5rem, 14vw, 6rem);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      background: linear-gradient(135deg, #6e4a3f 0%, #a55e4e 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    @keyframes gentleBeatHeart {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.12); opacity: 1; text-shadow: 0 0 12px #ffb8a8; }
+    }
+
+    .invite-line {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #7a5a4f;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+      background: rgba(255, 240, 230, 0.3);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      backdrop-filter: blur(8px);
+      display: inline-block;
+    }
+
+    .cta-btn {
+      background: linear-gradient(145deg, #eabfb9, #d9a7a0);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: #3d2b26;
+      padding: 1rem 2.8rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      border-radius: 48px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 18px 28px -10px #cfa39b, 0 0 0 1px #ffe7db inset;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 36px -12px #cb9e94, 0 0 0 2px #ffdbcd inset;
+      background: linear-gradient(145deg, #f5d2cb, #e2bcb4);
+      color: #2f1f1b;
+    }
+
+    /* STORY */
+    .story-card {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 3.5rem;
+      text-align: center;
+    }
+
+    .story-card p {
+      font-size: 1.4rem;
+      font-weight: 350;
+      color: #4f3a32;
+    }
+
+    .story-ornament {
+      font-size: 1.8rem;
+      color: #c28b7b;
+      margin: 0.5rem 0;
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    /* Fan whirling animation */
+    .fa-fan {
+      animation: fanSpin 3s infinite linear;
+      display: inline-block;
+    }
+    @keyframes fanSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    /* Leaf gentle sway */
+    .fa-leaf {
+      animation: leafSway 2.5s infinite ease-in-out;
+      display: inline-block;
+    }
+    @keyframes leafSway {
+      0%, 100% { transform: rotate(-8deg) translateY(0px); }
+      50% { transform: rotate(8deg) translateY(-3px); }
+    }
+    /* Gem sparkle - animated (diamond shape) */
+    .fa-gem {
+      animation: gemSparkle 1.8s infinite alternate;
+      display: inline-block;
+    }
+    @keyframes gemSparkle {
+      0% { text-shadow: 0 0 0px #ffd0c0; transform: scale(1); opacity: 0.7; }
+      100% { text-shadow: 0 0 12px #ffb89c; transform: scale(1.12); opacity: 1; }
+    }
+    /* Circle pulse - REMOVED animation (static) */
+    .fa-circle {
+      display: inline-block;
+      /* No animation: kept as static shape */
+    }
+
+    /* EVENTS */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .event-card {
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      background: rgba(255, 245, 238, 0.3);
+      backdrop-filter: blur(12px);
+      border-radius: 42px;
+      border: 1px solid rgba(250, 225, 210, 0.5);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 15px 30px -12px rgba(170, 120, 100, 0.08);
+    }
+
+    .event-card:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 35px 45px -18px #e6bfb0, 0 0 0 1px #fff1e6 inset;
+      background: rgba(255, 248, 240, 0.5);
+    }
+
+    .event-icon {
+      font-size: 2.8rem;
+      color: #bb7a6a;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    /* Ring bounce + shine */
+    .fa-ring {
+      animation: ringBounce 2s infinite ease;
+      display: inline-block;
+    }
+    @keyframes ringBounce {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(8deg); }
+    }
+    /* Champagne glasses cheers (clink) */
+    .fa-champagne-glasses {
+      animation: cheersClink 1.2s infinite alternate;
+      display: inline-block;
+      transform-origin: center;
+    }
+    @keyframes cheersClink {
+      0% { transform: rotate(-6deg) translateX(2px); }
+      100% { transform: rotate(6deg) translateX(-2px); text-shadow: 0 0 5px #ffbe9e; }
+    }
+    /* Utensils (fork & knife) crossing each other - X sign motion */
+    .fa-utensils {
+      display: inline-block;
+      animation: utensilsCross 1.6s infinite alternate ease-in-out;
+    }
+    @keyframes utensilsCross {
+      0% { transform: rotate(0deg) scale(1); letter-spacing: 0px; }
+      100% { transform: rotate(14deg) scale(1.1); letter-spacing: 4px; text-shadow: 0 0 2px #f0ab96; }
+    }
+    /* Heart in events - beating */
+    .fa-heart {
+      animation: gentleBeatHeart 1.6s infinite;
+      display: inline-block;
+    }
+    /* Location map-pin bounce */
+    .fa-map-pin {
+      animation: pinBounce 1.4s infinite alternate;
+      display: inline-block;
+    }
+    @keyframes pinBounce {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-4px); }
+    }
+
+    /* VENUE map pin extra */
+    .map-link .fa-map-pin {
+      animation: pinGlow 1.8s infinite alternate;
+    }
+    @keyframes pinGlow {
+      0% { filter: drop-shadow(0 0 0px #d49a86); }
+      100% { filter: drop-shadow(0 0 6px #e6aa94); }
+    }
+
+    /* CELEBRATE SECTION */
+    .celebrate-section {
+      background: linear-gradient(125deg, #fff4ed 0%, #ffe8df 100%);
+      border-radius: 64px;
+      margin: 2rem auto 3rem;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 40px -20px rgba(160, 100, 80, 0.3), 0 0 0 1px rgba(255, 225, 210, 0.8) inset;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .celebrate-section:hover {
+      transform: scale(1.01);
+      box-shadow: 0 40px 50px -20px #c28a78, 0 0 0 2px #ffeadc inset;
+    }
+    .celebrate-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .celebrate-icon {
+      font-size: 4rem;
+      color: #cb7e6b;
+      filter: drop-shadow(0 6px 12px rgba(200, 110, 80, 0.25));
+      margin-bottom: 1rem;
+      animation: gentleBeat 2s infinite ease-in-out;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .celebrate-icon .fa-heartbeat {
+      animation: heartbeatPulse 1.4s infinite ease;
+      display: inline-block;
+    }
+    @keyframes heartbeatPulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; text-shadow: 0 0 8px #ffb99f; }
+    }
+    .celebrate-icon .fa-images {
+      animation: imageSlide 2.5s infinite alternate;
+      display: inline-block;
+    }
+    @keyframes imageSlide {
+      0% { transform: translateY(0px) rotate(-2deg); }
+      100% { transform: translateY(-5px) rotate(2deg); }
+    }
+    @keyframes gentleBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); text-shadow: 0 0 12px #ffcfc0; }
+    }
+    .celebrate-title {
+      font-size: 3rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: #572f23;
+      letter-spacing: -0.01em;
+    }
+    .celebrate-desc {
+      font-size: 1.3rem;
+      margin: 1.2rem 0 2rem;
+      color: #694439;
+      font-weight: 400;
+    }
+    .celebrate-highlight-btn {
+      background: linear-gradient(115deg, #e6a293, #cd7a66);
+      border: none;
+      padding: 1.2rem 2.8rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      border-radius: 80px;
+      color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 20px 28px -10px #b2614c, 0 0 0 1px #ffe6dc inset;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .celebrate-highlight-btn i {
+      font-size: 1.6rem;
+      transition: transform 0.2s;
+    }
+    .celebrate-highlight-btn:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(115deg, #f2b7a8, #db8d77);
+      box-shadow: 0 28px 36px -12px #a7543e;
+    }
+    .celebrate-highlight-btn:hover i {
+      transform: translateX(5px);
+    }
+    .celebrate-extra {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      font-size: 1rem;
+      color: #956854;
+      flex-wrap: wrap;
+    }
+    .celebrate-extra span i {
+      margin-right: 6px;
+      color: #bc715d;
+      animation: softIconBounce 1.2s infinite alternate;
+      display: inline-block;
+    }
+    @keyframes softIconBounce {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-3px); }
+    }
+    .celebrate-badge {
+      position: absolute;
+      top: -15px;
+      right: 25px;
+      background: #f5c6b9;
+      backdrop-filter: blur(12px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #623e30;
+      transform: rotate(3deg);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+
+    /* VENUE inner icons */
+    .venue-text .fa-star {
+      animation: starSpinGlow 1.8s infinite alternate;
+      display: inline-block;
+    }
+    @keyframes starSpinGlow {
+      0% { transform: scale(1) rotate(-5deg); opacity: 0.7; }
+      100% { transform: scale(1.2) rotate(5deg); opacity: 1; text-shadow: 0 0 6px #ffd5c4; }
+    }
+    .map-placeholder .fa-tree, .map-placeholder .fa-water {
+      animation: treeSway 2s infinite ease-in-out;
+      display: inline-block;
+    }
+    @keyframes treeSway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(4deg); }
+    }
+    .fa-water {
+      animation: waterFlow 2.2s infinite alternate;
+    }
+    @keyframes waterFlow {
+      0% { transform: translateY(0px) scaleX(1); opacity: 0.8; }
+      100% { transform: translateY(3px) scaleX(1.05); opacity: 1; }
+    }
+
+    /* Closing section animations: flowers bloom + fan spin + hearts but NO DOVE animation */
+    .floral-border .fa-flower {
+      animation: flowerBloom 2.2s infinite alternate;
+      display: inline-block;
+    }
+    @keyframes flowerBloom {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      100% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 5px #f6cfbe); }
+    }
+    /* Fans in closing - whirling */
+    .floral-border .fa-fan {
+      animation: fanSpin 3s infinite linear;
+    }
+    /* Hearts in closing - beating */
+    .floral-border .fa-heart {
+      animation: heartPulseSpecial 1.3s infinite alternate;
+    }
+    @keyframes heartPulseSpecial {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); text-shadow: 0 0 8px #f6b6a2; }
+    }
+    /* DOVE - NO ANIMATION (static) */
+    .fa-dove {
+      display: inline-block;
+      /* No fly animation, static as requested */
+    }
+
+    /* Other existing styles */
+    .venue-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      background: radial-gradient(circle at 10% 20%, #fff3ea, #fde7dd);
+      backdrop-filter: blur(8px);
+      border-radius: 56px;
+      padding: 2.5rem 3rem;
+      border: 1px solid #ffded2;
+      transition: background-position 0.1s;
+    }
+    .venue-text {
+      flex: 2 1 280px;
+    }
+    .venue-name {
+      font-size: 2.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: #513b33;
+    }
+    .venue-desc {
+      font-size: 1.2rem;
+      color: #6e5549;
+      margin: 1rem 0 1.8rem;
+    }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #5e3e34;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border-bottom: 1.5px dashed #cfa295;
+      padding-bottom: 2px;
+    }
+    .map-link:hover {
+      color: #8a4f3e;
+      border-bottom: 1.5px solid #b78070;
+      transform: translateX(4px);
+    }
+    .map-placeholder {
+      flex: 1.2 1 220px;
+      background: linear-gradient(145deg, #edd9cf, #f5e4db);
+      border-radius: 48px;
+      padding: 1.8rem 1rem;
+      text-align: center;
+      border: 2px dashed #dbb4a4;
+      box-shadow: inset 0 0 0 1px #fff8f0, 0 20px 30px -12px #d4b2a4;
+    }
+    .closing {
+      text-align: center;
+      padding: 5rem 1.5rem;
+    }
+    .closing-message {
+      font-size: 2.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: #4e2f26;
+      max-width: 700px;
+      margin: 0 auto 2.2rem;
+    }
+    .floral-border {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      font-size: 2.4rem;
+      color: #cb8e7c;
+      margin: 2rem 0;
+      animation: softGlow 3s infinite alternate;
+    }
+    @keyframes softGlow {
+      0% { text-shadow: 0 0 2px #ffe0d4; opacity: 0.7; }
+      100% { text-shadow: 0 0 20px #fecfbf; opacity: 1; }
+    }
+    .fade-onscroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.1, 1), transform 0.9s ease;
+    }
+    .fade-onscroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .closing-cta {
+      background: transparent;
+      border: 1.5px solid #cfa295;
+      color: #563a30;
+      padding: 0.9rem 2.5rem;
+      font-size: 1.3rem;
+      border-radius: 48px;
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: 0.25s;
+    }
+    .closing-cta:hover {
+      background: #fff0e8;
+      border-color: #b78070;
+    }
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 0; }
+      .story-card { padding: 2rem 1.5rem; }
+      .celebrate-title { font-size: 2.2rem; }
+      .celebrate-highlight-btn { font-size: 1.2rem; padding: 0.9rem 1.8rem; }
+      .celebrate-section { padding: 2rem 1.2rem; }
+      .venue-highlight { padding: 1.8rem; }
+      .couple-name-top, .couple-name-bottom { font-size: clamp(3rem, 12vw, 5rem); }
+      .couple-heart { font-size: clamp(2rem, 7vw, 2.8rem); }
+    }
+    .flower-1 { background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'28\' fill=\'%23fbd2c7\' opacity=\'0.35\'/%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'18\' fill=\'%23f5b7a8\' opacity=\'0.3\'/%3E%3Ccircle cx=\'70\' cy=\'30\' r=\'18\' fill=\'%23f5b7a8\' opacity=\'0.3\'/%3E%3C/svg%3E'); }
+    .flower-2 { background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M50,15 L60,35 L82,40 L65,55 L72,80 L50,68 L28,80 L35,55 L18,40 L40,35 Z\' fill=\'%23f7cfc1\' opacity=\'0.35\'/%3E%3C/svg%3E'); }
+    .flower-3 { background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 120 120\'%3E%3Ccircle cx=\'60\' cy=\'60\' r=\'40\' fill=\'%23fadfd2\' opacity=\'0.2\'/%3E%3C/svg%3E'); }
+
+    /* Custom modal styles */
+    .custom-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeInOverlay 0.25s ease;
+    }
+    @keyframes fadeInOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .custom-modal-content {
+      background: #fff7f2;
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 30px 45px rgba(120, 70, 60, 0.3);
+      border: 1px solid #fadfd5;
+      animation: modalPop 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    @keyframes modalPop {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .modal-close-btn {
+      margin-top: 1.8rem;
+      background: #dbb5a5;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #3d2b26;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .modal-close-btn:hover {
+      background: #cfa294;
+      transform: translateY(-2px);
+    }
+
+    /* Photo Journey Overlay - Fullscreen Modal */
+    .photo-journey-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 16px;
+    }
+
+    .photo-journey-overlay.active {
+      opacity: 1;
+    }
+
+    .photo-journey-overlay .journey-container {
+      max-width: 1200px;
+      width: 100%;
+      background: #fef6f0;
+      border-radius: 48px;
+      box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      transform: translateY(30px);
+      transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      margin: auto;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-journey-overlay.active .journey-container {
+      transform: translateY(0);
+    }
+
+    .photo-journey-overlay .journey-header {
+      background: #fff2ea;
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .photo-journey-overlay .journey-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(219, 181, 165, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #3c2b24;
+      font-size: 1.2rem;
+      transition: all 0.2s ease;
+      z-index: 10;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .photo-journey-overlay .journey-close-btn:hover,
+    .photo-journey-overlay .journey-close-btn:active {
+      background: rgba(194, 141, 120, 0.9);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .photo-journey-overlay .journey-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #563a30;
+      margin-bottom: 0.4rem;
+    }
+
+    .photo-journey-overlay .journey-header p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #8b6a5b;
+      font-size: 1rem;
+    }
+
+    .photo-journey-overlay .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      flex: 1;
+    }
+
+    .photo-journey-overlay .photo-card {
+      background: #fff7f2;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px -8px rgba(100, 60, 40, 0.18);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-journey-overlay .photo-card:active {
+      transform: scale(0.98);
+    }
+
+    .photo-journey-overlay .image-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #f0e6e0;
+    }
+
+    .photo-journey-overlay .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-journey-overlay .photo-caption {
+      padding: 0.8rem 1rem;
+      text-align: center;
+      color: #7f5545;
+      background: #fffdf9;
+      font-size: 0.9rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .photo-journey-overlay .photo-caption i {
+      color: #c2816e;
+      margin-right: 6px;
+    }
+
+    .photo-journey-overlay .back-btn {
+      text-align: center;
+      padding: 1rem 2rem 2rem;
+      flex-shrink: 0;
+    }
+
+    .photo-journey-overlay .journey-back-link {
+      background: #dbb5a5;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #3c2b24;
+      font-weight: 600;
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: all 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .photo-journey-overlay .journey-back-link:hover,
+    .photo-journey-overlay .journey-back-link:active {
+      background: #cba294;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .photo-journey-overlay {
+        padding: 8px;
+        align-items: flex-start;
+      }
+      
+      .photo-journey-overlay .journey-container {
+        border-radius: 28px;
+        max-height: 95vh;
+      }
+      
+      .photo-journey-overlay .journey-header {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+      
+      .photo-journey-overlay .journey-close-btn {
+        top: 10px;
+        right: 10px;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+      }
+      
+      .photo-journey-overlay .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .photo-journey-overlay .photo-card {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body id="mainPage">
+  <section class="hero">
+    <div class="floral-bg" id="parallaxBg">
+      <div class="floating-flower flower-1" style="width: 280px; height: 280px; top: 5%; left: -5%;"></div>
+      <div class="floating-flower flower-2" style="width: 360px; height: 360px; bottom: 0; right: -5%;"></div>
+      <div class="floating-flower flower-3" style="width: 200px; height: 200px; top: 20%; right: 10%;"></div>
+      <div class="floating-flower flower-1" style="width: 180px; height: 180px; bottom: 15%; left: 8%; opacity: 0.4;"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="fade-onscroll visible">
+        <div class="couple-stacked">
+          <span class="couple-name-top">Lamya</span>
+          <span class="couple-heart"><i class="fas fa-heart"></i></span>
+          <span class="couple-name-bottom">Shan</span>
+        </div> <br> <br>
+        <div class="invite-line"><i class="fas fa-feather-alt" style="margin-right: 8px; animation: leafSway 2s infinite;"></i> And this is our life, <br> Our beginning <i class="fas fa-feather-alt" style="margin-left: 8px; animation: leafSway 2s infinite;"></i></div>
+        <a href="#story" class="cta-btn" id="celebrateBtn">Celebrate With Us <i class="fas fa-chevron-down" style="animation: pinBounce 1s infinite;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="container">
+      <div class="glass-card story-card fade-onscroll">
+        <div class="story-ornament"><i class="fas fa-fan"></i> <span style="font-size:1.6rem;">✦</span> <i class="fas fa-leaf"></i> <span style="font-size:1.6rem;">✦</span> <i class="fas fa-fan"></i></div>
+        <p style="font-size: 2.6rem;">“May Love, Light our way to Happiness”</p>
+        <p style="margin-top: 1.4rem; font-size: 1.3rem;">“With the blessings of our families, <br>we invite you to share in our joy.<br>Join us as we begin forever, wrapped in love and laughter.”</p>
+        <div class="story-ornament" style="margin-top: 1.2rem;"><i class="fas fa-circle"></i> <i class="fas fa-gem"></i> <i class="fas fa-circle"></i></div>
+      </div>
+    </div>
+  </section>
+
+
+<section>
+    <div class="container">
+      <div class="celebrate-section fade-onscroll" id="celebrateHighlight">
+        <div class="celebrate-inner">
+          <div class="celebrate-icon"></i><i class="fas fa-images"></i></div>
+          <div class="celebrate-title">Celebrate Our Love Story</div>
+          <div class="celebrate-desc">Swipe through the memories — a visual journey of Lamya & Shan. <br>
+<br>
+          <button class="celebrate-highlight-btn" id="openJourneyBtn">
+            <i class="fas fa-book-open"></i> Explore Our Photo Journey <i class="fas fa-arrow-right"></i>
+          </button>
+          <div class="celebrate-extra">
+            <span><i class="fas fa-heart"></i>Cherished moments</span>
+            <span><i class="fas fa-map-marked-alt"></i> From TARC to forever</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wedding Festivities | Elegant Celebration</title>
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts for refined serif & sans options -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fef7f0;  /* soft warm backdrop like natural linen */
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            color: #3a2c28;
+        }
+
+        /* main container matches typical wedding layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem 1.5rem;
+        }
+
+        /* serif class for romantic headline */
+        .serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        /* fade-onscroll animation base (smooth reveal) */
+        .fade-onscroll {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .fade-onscroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* heading style with pin bounce animation refined (pinBounce) */
+        h2 i.fa-calendar-alt {
+            animation: pinBounce 1.3s infinite ease-in-out;
+            display: inline-block;
+            transform-origin: center;
+        }
+
+        @keyframes pinBounce {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.12) rotate(4deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        /* events grid: responsive, two columns on desktop, stack on mobile */
+        .events-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* elegant card design — light pink background matching the rest of the card, no harsh white */
+        .event-card {
+            background: #fff7f2;  /* soft creamy pink/light blush tone */
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(94, 62, 52, 0.12), 0 2px 6px rgba(0,0,0,0.02);
+            padding: 2rem 1.8rem 2.2rem 1.8rem;
+            text-align: center;
+            flex: 1;
+            min-width: 260px;
+            max-width: 360px;
+            transition: all 0.3s ease;
+            border: 1px solid #f3e3d9;
+            backdrop-filter: blur(0px);
+        }
+
+        .event-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 38px -14px rgba(94, 62, 52, 0.2);
+            border-color: #e7cfc2;
+            background: #fffaf5;
+        }
+
+        /* dual icons: ring + champagne, or utensils + heart */
+        .event-icon {
+            font-size: 2.5rem;
+            color: #c2816e;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #ffefE6;  /* matching pale pinkish tone, blends with card */
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.02), 0 5px 12px rgba(194, 129, 110, 0.08);
+        }
+
+        .event-icon i {
+            font-size: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .event-card:hover .event-icon i {
+            transform: scale(1.05);
+        }
+
+        .event-title {
+            font-size: 1.9rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            color: #5e3e34;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.2px;
+        }
+
+        .event-date {
+            font-size: 1.2rem;
+            font-weight: 500;
+            background: #ffefe6;  /* soft pinkish background */
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            color: #ad6a54;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .event-location {
+            font-size: 1rem;
+            color: #6b4d42;
+            background: #ffede3;  /* light blush */
+            padding: 0.4rem 0.8rem;
+            border-radius: 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+            margin-bottom: 10px;
+        }
+
+        .event-location i {
+            color: #c2816e;
+            font-size: 0.85rem;
+        }
+
+        /* additional spacing for time/details section */
+        .event-time {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #916e5e;
+            border-top: 1px dashed #eedfd6;
+            padding-top: 0.9rem;
+            display: inline-block;
+            width: 80%;
+            letter-spacing: 0.3px;
+        }
+
+        /* micro style adjustments for reception line "Feast & Festivities" */
+        .reception-sub {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #c2816e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #ffede3;  /* consistent with light pink theme */
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            margin-top: 0.6rem;
+        }
+
+        /* responsive: on smaller screens cards align nicely */
+        @media (max-width: 720px) {
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+            h2 {
+                font-size: 2.4rem !important;
+            }
+            .event-title {
+                font-size: 1.6rem;
+            }
+            .event-card {
+                padding: 1.5rem;
+            }
+            .event-icon {
+                font-size: 2rem;
+                padding: 0.3rem 1rem;
+            }
+            .event-icon i {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* additional small polish */
+        .event-card div[style*="margin-top"] {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #7b5545;
+        }
+
+        /* ensure that every background element uses blush/pink tones—no stark white */
+        .event-card, .event-icon, .event-date, .event-location, .reception-sub {
+            background-color: #fff6ef; /* unified soft pink background */
+        }
+        /* more specific control: each of these can slightly vary but all in light pink family */
+        .event-date {
+            background: #fdede2;
+        }
+        .event-location {
+            background: #fceae0;
+        }
+        .reception-sub {
+            background: #fce8dd;
+        }
+        .event-icon {
+            background: #f9e7dd;
+        }
+        /* card base itself matches overall soft pink wedding theme */
+        .event-card {
+            background: #fff5ef;  /* warm blush white-pink, like the rest of the card */
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <div class="container">
+        <!-- Header with bouncing calendar icon and warm colors -->
+        <h2 style="text-align: center; font-size: 3rem; color: #5e3e34;" class="serif fade-onscroll">
+            <i class="fas fa-calendar-alt" style="margin-right: 12px; color: #c2816e; animation: pinBounce 1.3s infinite;"></i> 
+            Wedding Festivities
+        </h2>
+        
+        <div class="events-grid">
+            <!-- FIRST CARD: Wedding Celebration, with content from top code (7:00 PM, BGB Banquet Hall) -->
+            <div class="event-card fade-onscroll">
+                <div class="event-icon">
+                    <i class="fas fa-ring"></i> 
+                    <i class="fas fa-champagne-glasses"></i>
+                </div>
+                <div class="event-title">Friday</div>
+                <div class="event-date">17 July 2026</div>
+                <!-- Time from top code: 7:00 PM -->
+                <div style="margin-top: 16px; font-weight: 600; font-size: 1.2rem; color:#7b5545;">7:00 PM</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Intersection Observer for fade-onscroll elements to reveal smoothly
+    (function() {
+        const fadeElements = document.querySelectorAll('.fade-onscroll');
+        if (fadeElements.length) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+            fadeElements.forEach(el => observer.observe(el));
+            // also trigger a small check if any already visible on load
+            fadeElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                    observer.unobserve(el);
+                }
+            });
+        } else {
+            document.querySelectorAll('.fade-onscroll').forEach(el => el.classList.add('visible'));
+        }
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-onscroll:not(.visible)').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    })();
+</script>
+
+<!-- ensure consistent pink/light blush background across interactive states -->
+<style>
+    @keyframes pinBounce {
+        0% { transform: scale(1) rotate(0deg); }
+        45% { transform: scale(1.1) rotate(3deg); }
+        70% { transform: scale(0.98) rotate(-1deg); }
+        100% { transform: scale(1) rotate(0deg); }
+    }
+    /* additional overrides to guarantee no white flashes or white backgrounds */
+    .event-card, .event-icon, .event-date, .event-location, .reception-sub {
+        background-color: #fff5ef;
+        transition: background 0.2s ease;
+    }
+    .event-icon {
+        background: #faeadf;
+    }
+    .event-date {
+        background: #fde9df;
+    }
+    .event-location {
+        background: #fce6db;
+    }
+    .reception-sub {
+        background: #fbe4d7;
+    }
+    .event-card:hover {
+        background: #fff9f3; /* slight variation but still pinkish cream */
+    }
+    .event-card:hover .event-icon {
+        background: #fce8de;
+    }
+    .event-card:hover .event-date {
+        background: #fee9e0;
+    }
+    .event-card:hover .event-location {
+        background: #fde7dd;
+    }
+    .event-card:hover .reception-sub {
+        background: #fde5d9;
+    }
+    /* ensure body background also harmonizes, but main request: card backgrounds match light pink shade */
+    body {
+        background: #fdf3ec;
+    }
+    /* no stark white anywhere in the card module */
+    .container, .events-grid, .event-card * {
+        background-color: transparent; /* allow card bg to show */
+    }
+    .event-card .event-time, .event-card div[style*="margin-top"] {
+        background: none;
+    }
+    /* also heading icon, but no white background issue */
+    h2 i {
+        background: none;
+    }
+</style>
+</body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Venue Highlight | BGB Banquet Hall</title>
+    <!-- Font Awesome 6 (free) for icons matching the style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* overall page background: warm blush / cream tone, same as reference body style */
+        body {
+            background: #fdf3ec;   /* soft peach cream */
+            font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.4;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* ========== VENUE HIGHLIGHT CARD ========== */
+        /* matches the "event-card" style from reference but tailored for venue */
+        .venue-highlight {
+            background: #fff5ef;      /* same cream-pink base as .event-card */
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08), 0 5px 12px rgba(0,0,0,0.02);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            margin: 2rem 0 3rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .venue-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 28px 38px -14px rgba(94, 62, 52, 0.12);
+            background: #fff9f3;
+        }
+
+        /* left text section: venue info */
+        .venue-text {
+            flex: 1.4;
+            padding: 2rem 2rem 2rem 2.2rem;
+            background: transparent;
+        }
+
+        .venue-badge {
+            display: inline-block;
+            background: #ffe4da;
+            padding: 0.3rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #8b5a48;
+            margin-bottom: 1.5rem;
+            font-family: monospace;
+        }
+
+        .venue-badge i {
+            margin-right: 6px;
+            font-size: 0.8rem;
+        }
+
+        .venue-name {
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            color: #5e3e34;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+        }
+
+        .venue-details {
+            margin: 1rem 0 0.8rem;
+            font-size: 1rem;
+            color: #7b5545;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .venue-details .rsvp-line {
+            background: #faeadf;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .venue-details .rsvp-line i {
+            color: #c2816e;
+            font-size: 1rem;
+        }
+
+        .venue-details .rsvp-line span {
+            color: #5e3e34;
+        }
+
+        .venue-address-note {
+            margin-top: 1.2rem;
+            font-size: 0.95rem;
+            color: #8e6a5a;
+            border-left: 3px solid #eccbbc;
+            padding-left: 1rem;
+        }
+
+        .venue-address-note i {
+            margin-right: 6px;
+            color: #b87a63;
+        }
+
+        /* right side map area – styled like interactive card (same event-card vibe) */
+        .map-placeholder {
+            flex: 1;
+            background: #fce9e0;     /* analogous warm tone like event-icon hover */
+            margin: 1.2rem 1.2rem 1.2rem 0;
+            border-radius: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            transition: background 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(194, 129, 110, 0.15);
+        }
+
+        .map-placeholder a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+        }
+
+        .map-placeholder:hover {
+            background: #fce2d5;
+            transform: scale(0.98);
+        }
+
+        .map-placeholder i.fa-map-location-dot {
+            font-size: 2.5rem;
+            color: #b5765e;
+            margin-bottom: 12px;
+        }
+
+        .map-placeholder h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 8px 0 6px;
+            color: #5e3e34;
+        }
+
+        .nature-icons {
+            margin: 12px 0 6px;
+            font-size: 1rem;
+            color: #a6715b;
+            letter-spacing: 6px;
+        }
+
+        .tap-hint {
+            margin-top: 16px;
+            background: #fff1e9;
+            padding: 6px 12px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* fade-onscroll animation – exactly as reference code */
+        .fade-onscroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.1), transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+        }
+
+        .fade-onscroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* optional head note to mirror some style from reference */
+        .decorative-head {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .decorative-head small {
+            background: #ffe4da;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: #9a6b58;
+            letter-spacing: 1px;
+        }
+
+        /* responsive: on smaller screens stack column */
+        @media (max-width: 720px) {
+            .venue-highlight {
+                flex-direction: column;
+            }
+            .venue-text {
+                padding: 1.5rem;
+            }
+            .map-placeholder {
+                margin: 0 1rem 1.2rem 1rem;
+            }
+            .venue-name {
+                font-size: 2.1rem;
+            }
+        }
+
+        /* extra warm touches – no white flashes, inherit from body */
+        button, div, section {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="container">
+        <!-- subtle header garnish — not required, but adds friendly vibe like the reference style but venue focus -->
+        <div class="decorative-head fade-onscroll">
+        </div>
+        <!-- VENUE HIGHLIGHT card: exactly mirrors the looks of reference's event cards, but with venue content -->
+        <div class="venue-highlight fade-onscroll">
+            <!-- left side: venue textual info -->
+            <div class="venue-text">
+                <div class="venue-badge">
+                    </i> ✦ VENUE ✦
+                </div>
+                <div class="venue-name">BGB Banquet Hall</div>
+                <div class="venue-details">
+                    <div class="rsvp-line">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>RSVP: 01711-074793 </span>
+                    </div>
+                </div>
+                <!-- extra event time style hint like first card’s time (but venue oriented) -->
+                <div style="margin-top: 1.4rem; font-weight: 500; font-size: 0.9rem; color: #b27a63; display: flex; gap: 20px; flex-wrap: wrap;">
+                 
+                </div>
+            </div>
+            <!-- Right side: map placeholder exactly similar to the card look but clickable google maps -->
+            <div class="map-placeholder">
+                <a href="https://maps.google.com/?q=BGB+Banquet+Hall+Dhaka" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                    <i class="fas fa-map-location-dot"></i>
+                    <h3 style="font-family: serif; margin: 8px 0 6px;"></h3>
+                    <div class="nature-icons">
+                        <i class="fas fa-tree"></i>   <i class="fas fa-water"></i>   <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="tap-hint">
+                        <i class="fas fa-location-arrow"></i> Tap to open map
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Optional: A small additional wedding festivities card to mirror the second part from reference without rewriting the entire thing? but we strictly keep venue main.
+             However it's okay if we keep exactly the venue focus - the request says "focus to show result like the code below, dont need the whole code below, just the top code rewritten exactly in the looks of the below code"
+             We have rewritten the top venue section using the exact styling from the reference: warm card, bounce animation not needed but we retain consistency with fadescroll and pink backgrounds. 
+        -->
+    </div>
+</section>
+
+<!-- Intersection Observer for fade-onscroll elements (identical behavior to reference) -->
+<script>
+    (function() {
+        const fadeElements = document.querySelectorAll('.fade-onscroll');
+        if (fadeElements.length) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+            fadeElements.forEach(el => observer.observe(el));
+            // also trigger a small check if any already visible on load
+            fadeElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                    observer.unobserve(el);
+                }
+            });
+        } else {
+            document.querySelectorAll('.fade-onscroll').forEach(el => el.classList.add('visible'));
+        }
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-onscroll:not(.visible)').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    })();
+</script>
+
+<!-- Additional styling to match the color transitions, backgrounds exactly like reference ensures no white flashes, cohesive card -->
+<style>
+    /* ensure all interactive elements inherit warm palette & no white backgrounds */
+    .venue-highlight,
+    .venue-text,
+    .map-placeholder,
+    .venue-badge,
+    .rsvp-line,
+    .venue-address-note,
+    .tap-hint,
+    .decorative-head small {
+        background-color: transparent; /* but children have their own bg, we keep consistency */
+    }
+    /* The card bg is .venue-highlight and map bg */
+    .venue-highlight {
+        background: #fff5ef;
+    }
+    .map-placeholder {
+        background: #faeadf;    /* soft pinkish-beige like the .event-icon */
+        transition: background 0.2s;
+    }
+    .map-placeholder:hover {
+        background: #fce2d5;
+    }
+    .rsvp-line {
+        background: #faeadf;
+    }
+    .venue-badge {
+        background: #ffe4da;
+    }
+    .tap-hint {
+        background: #fff1e9;
+    }
+    /* ensure any lingering white replaced */
+    body, .container, section {
+        background: #fdf3ec;
+    }
+    /* Additional heart: subtle bounce for little icons? not mandatory but adds cheerfulness, not intrusive */
+    .venue-badge i {
+        animation: softFloat 2s infinite ease-in-out;
+        display: inline-block;
+    }
+    @keyframes softFloat {
+        0% { transform: translateY(0px);}
+        50% { transform: translateY(-2px);}
+        100% { transform: translateY(0px);}
+    }
+    /* matching similar hover and interaction to reference card .event-card hover effect */
+    .venue-highlight:hover .venue-badge {
+        background: #fadacb;
+    }
+    .venue-highlight:hover .rsvp-line {
+        background: #fbe3d8;
+    }
+    /* no white containers anywhere */
+    .venue-details i, .venue-address-note i {
+        color: #c2816e;
+    }
+    /* keep responsive typography */
+    @media (max-width: 480px) {
+        .venue-name {
+            font-size: 1.8rem;
+        }
+        .tap-hint {
+            font-size: 0.7rem;
+        }
+    }
+    /* final: ensure map link hover no underline issues */
+    .map-placeholder a {
+        transition: all 0.1s;
+    }
+    .map-placeholder a:active {
+        opacity: 0.8;
+    }
+</style>
+</body>
+
+  <section class="closing">
+    <div class="container">
+      <div class="floral-border"><i class="fas fa-flower"></i> <i class="fas fa-fan"></i> <i class="fas fa-flower"></i> <i class="fas fa-fan"></i> <i class="fas fa-flower"></i></div>
+      <div class="closing-message">“With hearts full of gratitude and excitement, <br>we can't wait to celebrate with you.”</div>
+      <div><button class="closing-cta interactive" id="joinCelebrationBtn">Join Us in Celebration <i class="fas fa-arrow-right"></i></button></div>
+      <div style="margin-top: 3rem; font-size: 1.1rem;">Lamya & Shan · July 2026</div>
+      <div class="floral-border" style="margin-top: 2rem;"><i class="fas fa-dove"></i> <i class="fas fa-heart" style="color:#d48676;"></i> <i class="fas fa-dove"></i></div>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      // Parallax flowers + micro animations
+      const parallaxBg = document.getElementById('parallaxBg');
+      if(parallaxBg) {
+        window.addEventListener('mousemove', (e) => {
+          const x = e.clientX / window.innerWidth, y = e.clientY / window.innerHeight;
+          const flowers = parallaxBg.querySelectorAll('.floating-flower');
+          flowers.forEach((flower, i) => {
+            const speed = 20 + i * 8;
+            flower.style.transform = `translate(${(x-0.5)*speed}px, ${(y-0.5)*speed}px)`;
+          });
+        });
+        let offset = 0;
+        setInterval(() => {
+          offset = (offset + 0.2) % 360;
+          const flowers = parallaxBg.querySelectorAll('.floating-flower');
+          flowers.forEach((f, idx) => {
+            const baseY = Math.sin(offset * 0.02 + idx) * 8;
+            const baseX = Math.cos(offset * 0.015 + idx) * 6;
+            f.style.transform = `translate(${baseX}px, ${baseY}px)`;
+          });
+        }, 50);
+      }
+
+      const fadeElements = document.querySelectorAll('.fade-onscroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+      }, { threshold: 0.15 });
+      fadeElements.forEach(el => observer.observe(el));
+      document.querySelector('.hero .fade-onscroll')?.classList.add('visible');
+
+      document.getElementById('celebrateBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' });
+      });
+      
+      // Custom modal function replaces alert
+      function showCustomModal(message) {
+        // Remove existing modal if any
+        const existingOverlay = document.querySelector('.custom-modal-overlay');
+        if (existingOverlay) existingOverlay.remove();
+        
+        const overlay = document.createElement('div');
+        overlay.className = 'custom-modal-overlay';
+        
+        const modalContent = document.createElement('div');
+        modalContent.className = 'custom-modal-content';
+        modalContent.innerHTML = `
+          <div style="font-size: 2rem; margin-bottom: 1rem;">✨</div>
+          <p style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #4e2f26; margin-bottom: 1rem;">${message}</p>
+          <button class="modal-close-btn">Close</button>
+        `;
+        
+        overlay.appendChild(modalContent);
+        document.body.appendChild(overlay);
+        
+        const closeBtn = modalContent.querySelector('.modal-close-btn');
+        const closeModal = () => overlay.remove();
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeModal();
+        });
+      }
+
+      document.getElementById('joinCelebrationBtn')?.addEventListener('click', () => {
+        showCustomModal("We're overjoyed to have you! See you in Dhaka - Lamya & Shan");
+      });
+
+const photos = [ 
+{ img: "https://i.ibb.co.com/wF387KcM/IMG-20260531-WA0091.jpg", caption: " Not even dating yet ", aspect: "square" }, // portrait = 4:5, square = 1:1, landscape = 16:9
+{ img: "https://i.ibb.co.com/d04LLSyY/IMG-20260531-WA0093.jpg", caption: " Highkey crushing ", aspect: "square" },
+{ img: "https://i.ibb.co.com/FkNnJssd/IMG-20260519-WA0038.jpg", caption: " Charming her with Max Rizz ", aspect: "square" },
+{ img: "https://i.ibb.co.com/GQnhsKW3/IMG-20260519-WA0003.jpg", caption: " Start of our forever ", aspect: "square" },
+{ img: "https://i.ibb.co.com/CsDsWZ6Q/IMG-20260519-WA0037.jpg", caption: " First of Many Rainy Day Walks ", aspect: "square" },
+{ img: "https://i.ibb.co.com/mCx5C5RV/IMG-20260519-WA0039.jpg", caption: " Rain never felt as good as that day", aspect: "square" },
+{ img: "https://i.ibb.co.com/0jVpSPRf/IMG-20260519-WA0043.jpg", caption: " Holding till the end ", aspect: "landscape" },
+{ img: "https://i.ibb.co.com/bgHVBz4n/IMG-20260519-WA0023.jpg", caption: " Tiring TARC Days ", aspect: "landscape" },
+{ img: "https://i.ibb.co.com/xwTZ8TV/IMG-20260531-WA0112.jpg", caption: "\"studying\"", aspect: "landscape" },
+{ img: "https://i.ibb.co.com/dw5nTC3N/IMG-20260531-WA0105.jpg", caption: "Notun notun prem", aspect: "square" },
+
+
+
+{ img: "https://i.ibb.co.com/cSKhcWyW/IMG-20260531-WA0097.jpg", caption: "Our little Ladybug", aspect: "square" },
+{ img: "https://i.ibb.co.com/3Yrtf8XM/IMG-20260531-WA0104.jpg", caption: "First valentines outside TARC", aspect: "square" },
+{ img: "https://i.ibb.co.com/4n1sbkp6/IMG-20260531-WA0066.jpg", caption: "Ice cream date turning into a rainy day walk", aspect: "portrait" },
+
+
+
+
+
+
+{ img: "https://i.ibb.co.com/gFgLfmyW/IMG-20260531-WA0029.jpg", caption: "The art and the artist", aspect: "portrait" },
+{ img: "https://i.ibb.co.com/2wg36Hj/IMG-20260531-WA0037.jpg", caption: "MAKING me happy", aspect: "portrait" },
+{ img: "https://i.ibb.co.com/Z6DGwn4d/IMG-20260531-WA0111.jpg", caption: "Practicing with mom's wedding sharee", aspect: "square" },
+{ img: "https://i.ibb.co.com/N6tc2txz/IMG-20260531-WA0060.jpg", caption: "Surprise pohela boishakh date", aspect: "square" },
+{ img: "https://i.ibb.co.com/7dtW191G/IMG-20260531-WA0075.jpg", caption: "First time in her city", aspect: "square" },
+{ img: "https://i.ibb.co.com/QgmGkHn/IMG-20260531-WA0034.jpg", caption: "Local bus-e prem <3", aspect: "portrait" },
+{ img: "https://i.ibb.co.com/7JxprzsQ/IMG-20260531-WA0040.jpg", caption: "Working hard on a birtday present", aspect: "portrait" },
+{ img: "https://i.ibb.co.com/4gPrY9N9/IMG-20260531-WA0041.jpg", caption: "Chakri ta ami peye gechi bela shuncho", aspect: "portrait" },
+{ img: "https://i.ibb.co.com/n4btZfC/IMG-20260531-WA0052.jpg", caption: "Two worlds colliding", aspect: "square" },
+{ img: "https://i.ibb.co.com/FL7hbCcx/IMG-20260531-WA0064.jpg", caption: "Closing the chapter on BRAC together", aspect: "square" },
+
+{ img: "https://i.ibb.co.com/5gpD4RKt/IMG-20260531-WA0062.jpg", caption: "Witnessing Jinn er baadsha at Cineplex", aspect: "square" },
+{ img: "https://i.ibb.co.com/v7PPwxR/IMG-20260531-WA0058.jpg", caption: "\"Need to start saving for a ring\"", aspect: "portait" },
+
+
+{ img: "https://i.ibb.co.com/C5z6bWJp/IMG-20260531-WA0036.jpg", caption: "Meeting one last time before the big move", aspect: "portrait" },
+{ img: "https://i.ibb.co.com/JwWWM2St/IMG-20260531-WA0026.jpg", caption: "Surviving LDR by sending each other flower pictures and pretty skies", aspect: "portrait" },
+{ img: "https://i.ibb.co.com/RKTR8Vn/IMG-20260531-WA0059.jpg", caption: "Hating long distance, but loving each other", aspect: "square" },
+{ img: "https://i.ibb.co.com/zTZGpb5F/Whats-App-Image-2026-05-25-at-11-34-18-PM.jpg", caption: "Second graduation, alone", aspect: "square" },
+{ img: "https://i.ibb.co.com/GvfZf35S/IMG-20260531-WA0049.jpg", caption: "Seeing each other after two whole years", aspect: "square" },
+{ img: "https://i.ibb.co.com/Y7JH1tgk/IMG-20260531-WA0051.jpg", caption: "Back to IRL dates again", aspect: "square" },
+{ img: "https://i.ibb.co.com/KxLKT6kk/IMG-20260531-WA0046.jpg", caption: "Paul Anka intensifies", aspect: "square" },
+{ img: "https://i.ibb.co.com/rfmFwkL5/IMG-20260531-WA0043.jpg", caption: "Going from boyfriend-girlfriend to ✨fiancés✨", aspect: "square" },
+
+];
+function openPhotoJourneyPage() {
+  const newWindow = window.open();
+  if (!newWindow) {
+    showCustomModal("Please allow pop-ups to view our photo journey.");
+    return;
+  }
+  let galleryHTML = '';
+  photos.forEach(photo => {
+    // Set aspect ratio based on the 'aspect' property
+    let paddingBottom;
+    switch(photo.aspect) {
+      case "square":
+        paddingBottom = "100%"; // 1:1 ratio
+        break;
+      case "landscape":
+        paddingBottom = "56.25%"; // 16:9 ratio
+        break;
+      case "portrait":
+      default:
+        paddingBottom = "125%"; // 4:5 ratio (portrait)
+        break;
+    }
+    
+    galleryHTML += `<div class="photo-card"><div class="image-container" style="padding-bottom: ${paddingBottom};"><img src="${photo.img}" alt="memory" loading="lazy" onerror="this.src='https://picsum.photos/id/104/400/300'"></div><div class="photo-caption"><i class="fas fa-camera"></i> ${photo.caption}</div></div>`;
+  });
+  newWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lamya & Shan · Photo Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box;} body{background:#fef6f0;font-family:'Plus Jakarta Sans',sans-serif;padding:2rem 1rem;} .journey-container{max-width:1200px;margin:0 auto;background:white;border-radius:64px;box-shadow:0 25px 45px -12px rgba(0,0,0,0.2);overflow:hidden;} .journey-header{background:#fff2ea;padding:2rem;text-align:center;} .journey-header h1{font-family:'Cormorant Garamond',serif;font-size:3rem;color:#563a30;} .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem;padding:2rem;} .photo-card{background:#fff7f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 24px -12px rgba(100,60,40,0.2);transition:all 0.3s;} .photo-card:hover{transform:translateY(-6px);} 
+      .image-container{position:relative;width:100%;overflow:hidden;background:#f0e6e0;}
+      .image-container img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;}
+      .photo-caption{padding:1rem;text-align:center;color:#7f5545;background:#fffdf9;} .back-btn{text-align:center;padding-bottom:2rem;} .back-btn a{background:#dbb5a5;padding:0.8rem 2rem;border-radius:60px;text-decoration:none;color:#3c2b24;font-weight:600;display:inline-block;} .download-btn{background:#c38d78;color:white;border:none;border-radius:40px;padding:8px 22px;margin:0 2rem 1rem;cursor:pointer;} .pdf-notice{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;background:#fff1e9;margin:1rem 2rem;padding:1rem;border-radius:28px;}
+    </style>
+    </head>
+    <body><div class="journey-container"><div class="journey-header"><h1> Lamya <i class="fas fa-heart"></i> Shan </h1><p>Our cherished journey</p></div><div class="photo-grid">${galleryHTML}</div><div class="back-btn"><a href="#" onclick="window.close(); return false;"><i class="fas fa-arrow-left"></i> Back to Invitation</a></div></div><script>document.getElementById('downloadPdfBtn')?.addEventListener('click',()=>{const html=document.documentElement.outerHTML;const blob=new Blob([html],{type:'text/html'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Lamya_Shan_Wedding_Album.html';document.body.appendChild(a);a.click();document.body.removeChild(a);alert("Album saved!");});<\/script></body></html>
+  `);
+  newWindow.document.close();
+}
+document.getElementById('openJourneyBtn')?.addEventListener('click', (e) => { e.preventDefault(); openPhotoJourneyPage(); });
+window.addEventListener('load', () => { fadeElements.forEach(el => { const rect = el.getBoundingClientRect(); if(rect.top < window.innerHeight*0.9) el.classList.add('visible'); }); });
+    })();
+  </script>
+</body>
+</html>
